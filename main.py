@@ -49,8 +49,6 @@ if __name__ == '__main__':
     # Getting scores
     train_scores = scores_to_tensor('data/en-' + lang + '/train.en' + lang + '.scores')
     valid_scores = scores_to_tensor('data/en-' + lang + '/dev.en' + lang + '.scores')
-    test_scores = scores_to_tensor('data/en-' + lang + '/test.en' + lang + '.scores')
-
 
     rnnlm_model = RNNLM(
         vocab_size=len(vocab_src),  # vocabulary size

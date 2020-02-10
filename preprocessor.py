@@ -19,10 +19,10 @@ def corpus_to_tensor(_vocab, filename):
 def scores_to_tensor(filename):
     scores = []
     with open(filename, encoding="utf8") as data:
-        for line in range(data, ncols=80, unit=' line', desc=f'Reading {filename} '):
+        for line in tqdm(data, ncols=80, unit=' line', desc=f'Reading {filename} '):
             line = line.strip()
             # Skip empty lines if any
             if line:
                 # Split from whitespace
-                scores.extend(int(line)))
-   return torch.LongTensor(scores)
+                scores += [float(line)]
+    return torch.LongTensor(scores)
